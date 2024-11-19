@@ -1,0 +1,575 @@
+{
+	"info": {
+		"_postman_id": "65cc69d9-4d43-43f5-849c-8e5d37c35251",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7032204",
+		"_collection_link": "https://lunar-escape-182795.postman.co/workspace/Site-Builder~edc39033-2a63-4050-aee5-6192a44c8004/collection/7032204-65cc69d9-4d43-43f5-849c-8e5d37c35251?action=share&source=collection_link&creator=7032204"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "alireza2000sajedi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URLBASE}}/api/login",
+							"host": [
+								"{{URLBASE}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "alireza2000sajedi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URLBASE}}/api/logout",
+							"host": [
+								"{{URLBASE}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "{{$randomEmail}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "{{$randomFullName}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URLBASE}}/api/register",
+							"host": [
+								"{{URLBASE}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "alireza2000sajedi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URLBASE}}/api/me",
+							"host": [
+								"{{URLBASE}}"
+							],
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ticket",
+			"item": [
+				{
+					"name": "Create new ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "{{$randomLoremWords}}",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "{{$randomLoremSentences}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URLBASE}}/api/tickets",
+							"host": [
+								"{{URLBASE}}"
+							],
+							"path": [
+								"api",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reply for a ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "{{$randomLoremSentences}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URLBASE}}/api/tickets/:ticketId/reply",
+							"host": [
+								"{{URLBASE}}"
+							],
+							"path": [
+								"api",
+								"tickets",
+								":ticketId",
+								"reply"
+							],
+							"variable": [
+								{
+									"key": "ticketId",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List tickets",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URLBASE}}/api/tickets?status=open",
+							"host": [
+								"{{URLBASE}}"
+							],
+							"path": [
+								"api",
+								"tickets"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "open"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show tickets with replies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "alireza2000sajedi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URLBASE}}/api/tickets/:ticketId",
+							"host": [
+								"{{URLBASE}}"
+							],
+							"path": [
+								"api",
+								"tickets",
+								":ticketId"
+							],
+							"variable": [
+								{
+									"key": "ticketId",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "Change Status",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "closed",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URLBASE}}/api/admin/tickets/:ticketId/change-status",
+									"host": [
+										"{{URLBASE}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"tickets",
+										":ticketId",
+										"change-status"
+									],
+									"variable": [
+										{
+											"key": "ticketId",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reply for a ticket Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "message",
+											"value": "{{$randomLoremSentences}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URLBASE}}/api/tickets/:ticketId/reply",
+									"host": [
+										"{{URLBASE}}"
+									],
+									"path": [
+										"api",
+										"tickets",
+										":ticketId",
+										"reply"
+									],
+									"variable": [
+										{
+											"key": "ticketId",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List tickets",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{URLBASE}}/api/admin/tickets",
+									"host": [
+										"{{URLBASE}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"tickets"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "open",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show tickets with replies",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "alireza2000sajedi@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URLBASE}}/api/admin/tickets/:ticketId",
+									"host": [
+										"{{URLBASE}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"tickets",
+										":ticketId"
+									],
+									"variable": [
+										{
+											"key": "ticketId",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "3|m8BXeyIoIyXw2dAftYd6ytADIlX772ci0uH11UKj809b8bae",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URLBASE",
+			"value": "https://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
