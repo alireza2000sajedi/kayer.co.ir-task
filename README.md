@@ -36,7 +36,7 @@ http://127.0.0.1:8085
 ### 2. Run Migrations
 To set up the database schema, execute the following command:
 ```bash
-docker exec -it laravel-app php artisan migrate
+docker exec -it laravel-app php artisan migrate --seed
 ```
 Replace `laravel-app` with the name of your Laravel container.
 
