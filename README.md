@@ -1,23 +1,9 @@
-
-# Laravel Dockerized Application
-
-This is a Laravel application set up with Docker to streamline development. Follow the steps below to get the application running.
-
----
-
-## Prerequisites
-Ensure the following tools are installed on your system:
-- [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
-
----
-
 ## Installation
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/alireza2000sajedi/kayer.co.ir-task.git
+cd kayer.co.ir-task
 ```
 
 ### 2. Configure Environment Variables
@@ -76,47 +62,3 @@ Clear configuration and application caches:
 docker exec -it laravel-app php artisan config:clear
 docker exec -it laravel-app php artisan cache:clear
 ```
-
----
-
-## Troubleshooting
-
-### Database Connection Issues
-- Ensure the database settings in `.env` match the service names in `docker-compose.yml`:
-  ```env
-  DB_HOST=mysql
-  DB_PORT=3306
-  ```
-
-### Permission Issues
-If you encounter file permission issues, set the correct ownership:
-```bash
-docker exec -it laravel-app chown -R www-data:www-data /var/www
-```
-
-### Service Logs
-Check logs for specific services:
-```bash
-docker logs <container-name>
-```
-
----
-
-## Folder Structure
-```plaintext
-├── app/                # Laravel application code
-├── docker/             # Docker-related files
-├── docker-compose.yml  # Docker Compose configuration
-├── .env                # Environment variables
-├── README.md           # Project documentation
-```
-
----
-
-## Contributing
-Feel free to open issues or submit pull requests for improvements.
-
----
-
-## License
-This project is licensed under the MIT License.
